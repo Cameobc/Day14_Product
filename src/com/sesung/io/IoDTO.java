@@ -3,11 +3,19 @@ package com.sesung.io;
 import java.sql.Date;
 
 public class IoDTO {
+	private int num;
 	private int pnum;
 	private int in_pct;
 	private String in_date;
 	private int out_pct;
 	private String out_date;
+	
+	public int getNum() {
+		return num;
+	}
+	public void setNum(int num) {
+		this.num = num;
+	}
 	public int getPnum() {
 		return pnum;
 	}

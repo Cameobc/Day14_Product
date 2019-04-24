@@ -48,10 +48,14 @@ public class ProductDAO {
 		
 	}
 	
-	public void update(String column, ProductDTO dto) throws Exception{
-		Connection con = DBConnector.connector();
-		String sql = "UPDATE PRODUCT SET = ? WHERE PNUM=1";
+	public int update(ProductDTO dto, Connection con) throws Exception{
+		String sql = "UPDATE PRODUCT SET STOCK=stock+? WHERE PNUM=?";
 		PreparedStatement st = con.prepareStatement(sql);
+		st.setInt(1, dto.getStock());
+		st.setInt(2, dto.getPnum());
+		int result = st.executeUpdate();
+		DBConnector.disconnection(con, st);
+		return result;
 	}
 	
 	public int insert(ProductDTO dto) throws Exception {

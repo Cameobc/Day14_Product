@@ -13,8 +13,8 @@ public class ProductDAOTest {
 	public void test() throws Exception {
 		ProductDAO dao = new ProductDAO();
 		ProductDTO dto = new ProductDTO();
-		dto = dao.selectOne(3);
-		assertNotNull(dto);
+//		int result = dao.update(30, 2);
+//		assertEquals(1, result);
 //		dto.setCategory("ELECTRONIC");
 //		dto.setpName("GRAM");
 //		dto.setPrice(150);
